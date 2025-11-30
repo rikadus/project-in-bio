@@ -20,6 +20,7 @@ const config: Config = {
         "border-tertiary": "#19191A",
         "accent-green": "#87BB2D",
         "accent-pink": "#B5446B",
+        "accent-purple": "#4B2DBB",
       },
     },
   },
