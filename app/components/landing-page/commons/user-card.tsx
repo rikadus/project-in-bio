@@ -7,17 +7,17 @@ export default function UserCard() {
       <div className="size-48">
         <img
           src="/kadu.png"
-          alt="Ricardo Developer"
+          alt="Ricardo Vieira"
           className="rounded-full object-cover w-full h-full"
         />
       </div>
       <div className="flex flex-col w-full gap-2">
         <div className="flex items-center gap-2">
           <h3 className="text-3xl font-bold min-w-0 overflow-hidden">
-            Ricardo Developer
+            Ricardo Vieira
           </h3>
         </div>
-        <p className="opacity-40">
+        <p className="opacity-40bg bg-[radial-gradient(circle_at_50%_50%,#4B2DBB,transparent_80%)]">
           Desenvolvedor Full Stack | Apaixonado por tecnologia e inovação.
         </p>
       </div>

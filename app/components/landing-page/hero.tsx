@@ -4,8 +4,8 @@ import UserCard from "./commons/user-card";
 
 export default function Hero() {
   return (
-    <div className="flex border">
-      <div className="w-full flex flex-col gap-2 mt-[35vh] border">
+    <div className="flex h-screen">
+      <div className="w-full flex flex-col gap-2 mt-[35vh]">
         <h1 className="text-5xl font-bold text-white leading-[64px]">
           Seus Projetos e Redes Sociais em um único Link
         </h1>
@@ -21,7 +21,7 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="w-full flex items-center justify-center bg-[radial-gradient(circle_at_50%_50%,#4B2DBB,transparent)]">
+      <div className="w-full flex items-center justify-center bg-[radial-gradient(circle_at_50%_50%,#4B2DBB,transparent_60%)]">
         <div className="relative">
           <UserCard />
           <div className="absolute -bottom-[7%] -right-[45%]">
