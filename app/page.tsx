@@ -1,4 +1,5 @@
 import Image from "next/image";
+import FAQ from "./components/landing-page/faq";
 import Header from "./components/landing-page/header";
 import Hero from "./components/landing-page/hero";
 import VideoExplanation from "./components/landing-page/video-explanation";
@@ -11,6 +12,7 @@ export default function Home() {
       <Hero />
       <VideoExplanation />
       <Pricing />
+      <FAQ />
 
       {/* <VideoExplanation />
       <Pricing />
