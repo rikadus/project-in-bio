@@ -1,9 +1,9 @@
 import Image from "next/image";
-import FAQ from "./components/landing-page/faq";
-import Header from "./components/landing-page/header";
-import Hero from "./components/landing-page/hero";
-import VideoExplanation from "./components/landing-page/video-explanation";
-import Pricing from "./components/landing-page/pricing";
+import FAQ from "../components/landing-page/faq";
+import Header from "../components/landing-page/header";
+import Hero from "../components/landing-page/hero";
+import VideoExplanation from "../components/landing-page/video-explanation";
+import Pricing from "../components/landing-page/pricing";
 
 export default function Home() {
   return (
