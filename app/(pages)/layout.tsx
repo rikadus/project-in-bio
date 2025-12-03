@@ -13,9 +13,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
+    
     /*Todo body da aplicação vai ter o redHatDisplay*/
     <html lang="pt-BR">
       <body
+      suppressHydrationWarning={true}
         className={`${redHatDisplay.className} bg-background-primary text-content-body antialiased`}
       >
         {children}

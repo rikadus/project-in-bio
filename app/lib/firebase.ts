@@ -3,27 +3,34 @@ import { getFirestore } from "firebase-admin/firestore";
 import { getStorage } from "firebase-admin/storage";
 import "server-only";
 
-// Certificado
-const decodeKey = Buffer.from(process.env.FIREBASE_PRIVATE_KEY!, "base64").toString("utf-8");
+// 1. Tenta pegar a variável BASE64
+const encodedKey = process.env.FIREBASE_PRIVATE_KEY_BASE64;
+let privateKey;
 
-export const firebaseCert = cert ({
-    clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
-    privateKey: decodeKey,
-    projectId: process.env.FIREBASE_PROJECT_ID,
+if (encodedKey) {
+  // 2. Se existir Base64, decodifica
+  const decoded = Buffer.from(encodedKey, "base64").toString("utf-8");
+  // 3. E AINDA ASSIM faz o replace, garantindo que as quebras de linha funcionem
+  privateKey = decoded.replace(/\\n/g, '\n'); 
+} else {
+  // Fallback para caso você use a chave normal (sem ser base64)
+  privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
+}
+
+const credential = cert({
+  clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+  privateKey: privateKey,
+  projectId: process.env.FIREBASE_PROJECT_ID,
 });
 
-// Instancia do app
 if (!getApps().length) {
-   initializeApp({
-       credential: firebaseCert,
-      storageBucket: process.env.FIREBASE_STORAGE_BUCKET, 
-   });
-} 
+  if (process.env.FIREBASE_PROJECT_ID && privateKey && process.env.FIREBASE_CLIENT_EMAIL) {
+    initializeApp({
+      credential,
+      storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    });
+  }
+}
 
 export const db = getFirestore();
-
-db.collection("profiles").doc("123").get();
-
 export const storage = getStorage().bucket();
-
-
