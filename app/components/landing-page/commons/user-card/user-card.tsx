@@ -1,7 +1,15 @@
 import { Github, Instagram, Linkedin, Twitter, Plus } from "lucide-react";
-import Button from "../ui/button";
+import Button from "../../ui/button";
+import EditSocialLinks from "../edit-socil-links";
 
 export default function UserCard() {
+  const icons = [
+    <Github />,
+    <Linkedin />,
+    <Instagram />,
+    <Twitter />,
+    
+  ];
   return (
     <div className="w-[348px] flex flex-col gap-5 items-center p-5 border border-white border-opacity-10 bg-[#121212] rounded-3xl text-white">
       <div className="size-48">
@@ -24,22 +32,12 @@ export default function UserCard() {
       <div className="flex flex-col gap-2 w-full">
         <span className="uppercase text-xs font-medium">Links</span>
         <div className="flex gap-3">
-          <button className="p-3 rounded-xl bg-[#1E1E1E] hover:bg-[#2E2E2E]">
-            <Github />
-          </button>
-          <button className="p-3 rounded-xl bg-[#1E1E1E] hover:bg-[#2E2E2E]">
-            <Linkedin />
-          </button>
-          <button className="p-3 rounded-xl bg-[#1E1E1E] hover:bg-[#2E2E2E]">
-            <Instagram />
-          </button>
-          <button className="p-3 rounded-xl bg-[#1E1E1E] hover:bg-[#2E2E2E]">
-            <Twitter />
-          </button>
-
-          <button className="p-3 rounded-xl bg-[#1E1E1E] hover:bg-[#2E2E2E]">
-            <Plus />
-          </button>
+          {icons.map((icon,index) => (
+            <button key={index} className="p-3 rounded-xl bg-[#1E1E1E] hover:bg-[#2E2E2E]">
+              {icon}
+            </button>
+          ))}
+          <EditSocialLinks />
         </div>
       </div>
       <div className="flex flex-col gap-3 w-full h-[172px]">
