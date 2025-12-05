@@ -6,6 +6,13 @@ export type ProfileData = {
   totalVisits: number;
   description: string;
   createdAt: number;
+  socialMedias?: {
+    github: string;
+    linkedin: string;
+    instagram: string;
+    twitter: string;
+  };
+  updatedAt?: number;
 }
 
 export type ProjectData = {

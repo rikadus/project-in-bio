@@ -1,7 +1,7 @@
 "use server";
 import { Timestamp } from "firebase-admin/firestore";
 import { db } from "../lib/firebase";
-import { auth } from "firebase-admin";
+import { auth } from "@/app/lib/auth";
 
 export async function createSocialLinks ({
   profileId,
@@ -22,7 +22,7 @@ export async function createSocialLinks ({
 
   try {
     await db.collection("profiles").doc(profileId).update({
-      socilMedias: {
+      socialMedias: {
         github,
         linkedin,
         instagram,
