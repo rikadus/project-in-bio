@@ -5,31 +5,37 @@ import Link from "next/link";
 import { ProfileData } from "@/app/server/get-profile-data";
 import AddCustomLink from "./add-custom-link";
 import { formatUrl } from "@/app/lib/utils";
+import EditUserCard from "./edit-user-card";
+import { getDownloadURLFromPath } from "@/app/lib/firebase";
+
 
 //Redes Sociais 
-export default function UserCard({
+export default async function UserCard({
   profileData,
+  isOwner,
 }: {
   profileData?: ProfileData;
+  isOwner?: boolean;
 }) {
   
   return (
     <div className="w-[348px] flex flex-col gap-5 items-center p-5 border border-white border-opacity-10 bg-[#121212] rounded-3xl text-white">
       <div className="size-48">
         <img
-          src="/kadu.png"
-          alt="Ricardo Vieira"
+          src={await getDownloadURLFromPath(profileData?.imagePath) || "/kadu.png"}
+          alt={profileData?.name || "Ricardo Vieira"}
           className="rounded-full object-cover w-full h-full"
         />
       </div>
       <div className="flex flex-col w-full gap-2">
         <div className="flex items-center gap-2">
           <h3 className="text-3xl font-bold min-w-0 overflow-hidden">
-            Ricardo Vieira
+            {profileData?.name || "Ricardo Vieira"}
           </h3>
+          {isOwner && profileData && <EditUserCard profileData={profileData} />}
         </div>
-        <p className="opacity-40bg bg-[radial-gradient(circle_at_50%_50%,#4B2DBB,transparent_80%)]">
-          Desenvolvedor Full Stack | Apaixonado por tecnologia e inovação.
+        <p className="opacity-40">
+          {profileData?.description || "Desenvolvedor Full Stack | Apaixonado por tecnologia e inovação."}
         </p>
       </div>
       <div className="flex flex-col gap-2 w-full">
@@ -76,10 +82,10 @@ export default function UserCard({
             )
           }         
          
-         <EditSocialLinks socialMedias={profileData?.socialMedias} />
+         {isOwner && <EditSocialLinks socialMedias={profileData?.socialMedias} />}
           {/*<EditSocialLinks />*/}
         </div>      </div>
-      <div className="flex flex-col gap-3 w-full h-[172px]">
+      <div className="flex flex-col gap-3 w-full min-h-[172px]">
         <div className="w-full flex flex-col items-center gap-3">
           {profileData?.link1 && (
             <Link href={formatUrl(profileData?.link1.url)} target="_blank" className="w-full">
@@ -96,10 +102,10 @@ export default function UserCard({
             <Button className="w-full">{profileData?.link3.title}</Button>
             </Link>
           )}
-          
+          {isOwner && <AddCustomLink/>}
         </div>
       </div>
-      <AddCustomLink/>
+      
     </div>
   );
 }

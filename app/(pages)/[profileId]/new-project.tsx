@@ -10,6 +10,8 @@ import { startTransition, useState } from "react";
 import { compressFiles } from "@/app/lib/utils";
 import { createProject } from "@/app/actions/createProject";
 import { useRouter } from "next/navigation";
+import { triggerImageInput, handleImageInput } from "@/app/lib/utils";
+
 
 
 export default function NewProject({profileId}: {profileId: string}) {
@@ -30,18 +32,9 @@ export default function NewProject({profileId}: {profileId: string}) {
     setIsOpen(true);
   };
 
-   function triggerImageInput (id: string){
-    document.getElementById(id)?.click();
-   }
+   
 
-   function handleImageInput (e: React.ChangeEvent<HTMLInputElement>) {
-    const file = e.target.files?.[0]?? null;
-    if (file) {
-      const imageURL = URL.createObjectURL(file);
-      return imageURL;
-        }
-     return null;
-   }
+   
 
    async function handleCreateProject() {
     setIsCreatingProject(true);

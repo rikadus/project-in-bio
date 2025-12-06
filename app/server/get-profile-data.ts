@@ -4,8 +4,10 @@ import { Link } from "../actions/add.custom-links";
 
 export type ProfileData = {
   userId: string;
-  totalVisits: number;
+  name: string; 
+  imagePath: string;
   description: string;
+  totalVisits: number;
   createdAt: number;
   socialMedias?: {
     github: string;
