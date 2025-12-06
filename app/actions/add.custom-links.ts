@@ -1,0 +1,31 @@
+"use server"
+
+import { db } from "../lib/firebase";
+
+export type Link = {
+    title: string;
+    url: string;
+}
+
+export default async function addCustomLinks({
+  link1,
+  link2,
+  link3,
+  profileId
+}: {
+    link1 : Link;
+    link2 : Link;
+    link3 : Link;
+    profileId: string;
+}) {
+    try {
+      await db.collection("profiles").doc(profileId).update({
+        link1,
+        link2,
+        link3,
+
+      });
+    } catch (error) {
+      console.error(error);
+    }
+}

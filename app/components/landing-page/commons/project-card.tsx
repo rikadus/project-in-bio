@@ -1,23 +1,19 @@
 "use client"
 import { ProjectData } from "@/app/server/get-profile-data";
 import Link from "next/link";
-
+import { formatUrl } from "@/app/lib/utils";
 
 //
-interface ProjectCardProps {
-  project?: ProjectData;
-  isOwner?: boolean;
-  img?: string;
-}
-
-export default function ProjectCard({project, isOwner, img}: ProjectCardProps) {
-
-  if (!project) return null;
-  
-  const projectUrl = project.projectUrl;
-  const formattedUrl = projectUrl.startsWith("http") 
-  ? projectUrl 
-  : `https://${projectUrl}`;
+export default function ProjectCard({
+  project,
+  isOwner,
+  img
+}: {
+  project: ProjectData;
+  isOwner: boolean;
+  img: string;
+}) {
+  const formattedUrl = formatUrl(project.projectUrl);
 
   const handleClick = () => {
     console.log("Projeto clicado");//TODO: Adicionar page view
@@ -41,7 +37,9 @@ export default function ProjectCard({project, isOwner, img}: ProjectCardProps) {
         )}
        
         <div className="flex flex-col">
-          <span className="text-white font-bold">{project.projectName}</span>
+          <span className="text-white font-bold">
+            {project.projectName}
+            </span>
           <span className="text-content-body text-sm">
             {project.projectDescription}
           </span>
