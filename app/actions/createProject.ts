@@ -36,7 +36,7 @@ export async function createProject(formData: FormData) {
   // 2. Salvar no Firestore
   try {
     await db
-      .collection("projects")
+      .collection("profiles")
       .doc(profileId)
       .collection("projects")
       .doc(generatedId)

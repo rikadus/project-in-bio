@@ -7,6 +7,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { auth } from "@/app/lib/auth";
 import { getDownloadURLFromPath } from "@/app/lib/firebase";
+import { increaseProfileVisits } from "@/app/actions/increase-profile-visits";
 
 
 
@@ -33,8 +34,10 @@ export default async function ProfilePage({
   const isOwner = profileData.userId === session?.user?.id;
 
   //Adicionar page view(Quantas pessoas visitaram o perfil)
-
-
+  if (!isOwner) {
+    await  increaseProfileVisits(profileId);
+  }
+  
   //Se o usuário não for dono do perfil, ele não pode ver o projeto,direcionar para o upgrade
 
 
@@ -64,9 +67,11 @@ export default async function ProfilePage({
         {isOwner && <NewProject profileId={profileId}/>}
 
       </div>
+      {isOwner && (
       <div className="absolute bottom-4 right-0 left-0 w-min mx-auto">
-        <TotalVisits />
+        <TotalVisits totalVisits={profileData.totalVisits} />
       </div>
+      )}
     </div>
   );
 }
