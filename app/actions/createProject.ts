@@ -19,12 +19,11 @@ export async function createProject(formData: FormData) {
   const generatedId = randomUUID();
 
   // 1. Upload da Imagem
-  // Adicionei a barra '/' para organizar melhor: projects-images/ID_PERFIL/ID_PROJETO
   const storageRef = storage.file(`projects-images/${profileId}/${generatedId}`);
   const arrayBuffer = await file.arrayBuffer();
   const buffer = Buffer.from(arrayBuffer);
   
-  // Define o tipo do arquivo (opcional, mas bom para o navegador abrir a imagem direto)
+  // Define o tipo do arquivo 
   await storageRef.save(buffer, {
     metadata: {
       contentType: file.type,
@@ -46,8 +45,8 @@ export async function createProject(formData: FormData) {
         projectName,
         projectDescription,
         projectUrl,
-        imagePath: imagePath, // Corrigido erro de sintaxe
-        createdAt: Timestamp.now().toMillis(), // Adicionado ()
+        imagePath: imagePath, 
+        createdAt: Timestamp.now().toMillis(), 
       });
 
     return true;

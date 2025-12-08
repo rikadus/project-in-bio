@@ -57,10 +57,10 @@ export async function getProfileProjects(profileId: string) {
   const projects = snapshot.docs.map((doc) => {
     const data = doc.data();
     return {
-      id: doc.id, // <--- IMPORTANTE: Garante que o ID do documento vai para o front-end
+      id: doc.id, // Garante que o ID do documento vai para o front-end
       userId: data.userId,
       projectName: data.projectName,
-      projectUrl: data.projectUrl || "", // <--- CORREÇÃO: Garante string vazia se undefined
+      projectUrl: data.projectUrl || "", //Garante string vazia se undefined
       projectDescription: data.projectDescription,
       imagePath: data.imagePath,
       createdAt: data.createdAt,

@@ -34,13 +34,10 @@ export default async function ProfilePage({
   const isOwner = profileData.userId === session?.user?.id;
 
   //Adicionar page view(Quantas pessoas visitaram o perfil)
-  if (!isOwner) {
+  if (!isOwner) { //Se o usuário não for dono do perfil, ele não pode ver o projeto,direcionar para o upgrade
     await  increaseProfileVisits(profileId);
   }
-  
-  //Se o usuário não for dono do perfil, ele não pode ver o projeto,direcionar para o upgrade
-
-
+ 
   return (
     <div className="relative h-screen flex p-20 overflow-hidden">
       <div className="fixed top-0 left-0 w-full flex justify-center gap-1 py-2 bg-background-tertiary">

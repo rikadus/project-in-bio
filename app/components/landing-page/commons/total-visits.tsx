@@ -1,6 +1,6 @@
 import { TrendingUp } from "lucide-react";
 
-export function TotalVisits({totalVisits = 0 }: {totalVisits: number}) {
+export function TotalVisits({totalVisits = 0 }: {totalVisits?: number}) {
   return (
     <div
       className="w-min whitespace-nowrap flex items-center gap-5
