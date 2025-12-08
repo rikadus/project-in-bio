@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@auth/firebase-adapter": "^2.11.1",
-    "@stripe/stripe-js": "^8.5.3",
+    "@stripe/stripe-js": "^4.4.0",
     "browser-image-compression": "^2.0.2",
     "clsx": "^2.1.1",
     "firebase-admin": "^13.6.0",
