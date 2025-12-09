@@ -15,7 +15,11 @@ const {profileId} = useParams();
                     isSubscription: true,
                     metadata: {profileId}
                   })}>R$ 9,90 / mês</Button>
-                {/* <Button onClick={() => createStripeCheckout('yearly')}>R$ 99,90 Vitalício</Button> */}
+               <Button onClick={() => 
+                createStripeCheckout({
+                  isSubscription: false,
+                  metadata: {profileId}
+                })}>R$ 99,90 Vitalício</Button> 
               </div>
     );
 }
