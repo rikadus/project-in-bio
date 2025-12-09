@@ -8,14 +8,16 @@ import { ChangeEvent, FormEvent, useState } from "react";
 
 import { verifyLink } from "@/app/actions/verify-link";
 import { createLink } from "@/app/actions/create-link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 
 
 
 export default function CreateLinkForm() {
   const router = useRouter();
 
-  const [link, setLink] = useState("");
+  const searchParams = useSearchParams();
+
+  const [link, setLink] = useState(sanitizeLink(searchParams.get("link") || ""));
   const [error, setError] = useState("");
 
   function handleLinkChange(e: ChangeEvent<HTMLInputElement>) {
