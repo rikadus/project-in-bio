@@ -4,7 +4,7 @@ import UserCard from "@/app/components/landing-page/commons/user-card/user-card"
 import { getProfileData, getProfileProjects } from "@/app/server/get-profile-data";
 import NewProject from "./new-project";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { auth } from "@/app/lib/auth";
 import { getDownloadURLFromPath } from "@/app/lib/firebase";
 import { increaseProfileVisits } from "@/app/actions/increase-profile-visits";
@@ -37,12 +37,29 @@ export default async function ProfilePage({
   if (!isOwner) { //Se o usuário não for dono do perfil, ele não pode ver o projeto,direcionar para o upgrade
     await  increaseProfileVisits(profileId);
   }
+
+   {/*if (isOwner && !session?.user?.isSubscribed && !session?.user?.isTrial) {
+    redirect(`/${profileId}/upgrade`);
+  }*/}
+
+  //TODO: Verificar se o usuário está na versão trial. Direcionar para upgrade
  
 console.log(session);
 
   return (
     <div className="relative h-screen flex p-20 overflow-hidden">
-      
+      {
+        session?.user?.isTrial && !session.user.isSubscribed && (
+          <div className="fixed top-0 left-0 w-full flex justify-center gap-1 py-2 bg-background-tertiary">
+            <span>Você está usando a versão trial. </span>
+            <Link href={`/${profileId}/upgrade`}>
+              <button className="text-accent-green font-bold">
+                Faça a upgrade agora!
+              </button>
+            </Link>
+          </div>
+        )
+      }
       
      {/* <div className="fixed top-0 left-0 w-full flex justify-center gap-1 py-2 bg-background-tertiary">
         <span>Você está usando a versão trial. </span>

@@ -20,6 +20,7 @@ declare module "next-auth" {
   interface User {
     createdAt: number;
     isTrial?: boolean;
+    isSubscribed?: boolean;
   }
 }
 
