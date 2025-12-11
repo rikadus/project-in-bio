@@ -38,16 +38,20 @@ export default async function ProfilePage({
     await  increaseProfileVisits(profileId);
   }
  
+console.log(session);
+
   return (
     <div className="relative h-screen flex p-20 overflow-hidden">
-      <div className="fixed top-0 left-0 w-full flex justify-center gap-1 py-2 bg-background-tertiary">
+      
+      
+     {/* <div className="fixed top-0 left-0 w-full flex justify-center gap-1 py-2 bg-background-tertiary">
         <span>Você está usando a versão trial. </span>
         <Link href={`/${profileId}/upgrade`}>
           <button className="text-accent-green font-bold">
             Faça a upgrade agora!
           </button>
         </Link>
-      </div>
+      </div>*/}
       <div className="w-1/2 flex justify-center h-min">
         <UserCard profileData={profileData} isOwner={isOwner}/>
       </div>

@@ -73,8 +73,25 @@ export async function getProfileProjects(profileId: string) {
   return projects;
 }
 
-export async function getProfileId(userId: string) {
-  const snapshot = await db.collection("profiles").where("userId", "==", userId).get();
+export async function getProfileId(userId: string | undefined | null) {
+  // 1. Proteção: Se não tiver ID, nem tenta buscar no banco
+  if (!userId) return null;
 
-  return snapshot.docs[0].id;
+  try {
+    const snapshot = await db
+      .collection("profiles")
+      .where("userId", "==", userId)
+      .get();
+
+    // 2. Proteção: Verifica se encontrou algum documento antes de tentar acessar
+    if (snapshot.empty) {
+      return null;
+    }
+
+    return snapshot.docs.map((doc) => doc.id)[0];
+
+  } catch (error) {
+    console.error("Erro ao buscar profileId:", error);
+    return null;
+  }
 }
