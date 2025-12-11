@@ -47,7 +47,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     
   },
   callbacks:{  
-    session:({session, user}) => {
+    session({session, user}) {
       return {
         ...session,
         user:{

@@ -73,7 +73,7 @@ export async function getProfileProjects(profileId: string) {
   return projects;
 }
 
-export async function getProfileId(userId: string | undefined | null) {
+export async function getProfileId(userId?: string ) {
   // 1. Proteção: Se não tiver ID, nem tenta buscar no banco
   if (!userId) return null;
 
