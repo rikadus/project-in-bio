@@ -28,7 +28,7 @@ export async function TotalVisits({
 
       {showBar && (
         <div className="flex items-center gap-2">
-      {session?.user.isSubscribed && <PortalButton />}   
+      <PortalButton />   
       <form action={manageAuth}> 
       <button className="text-white hover:underline hover:text-accent-green transition-colors" >Sair</button> 
       </form>     

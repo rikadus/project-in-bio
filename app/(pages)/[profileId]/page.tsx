@@ -15,8 +15,10 @@ import { increaseProfileVisits } from "@/app/actions/increase-profile-visits";
 
 export default async function ProfilePage({
   params,
+  searchParams,
 }: {
   params: Promise <{ profileId: string }>;
+  searchParams: Promise<{ checkout_success?: string }>;
 }) {
   const { profileId } = await params;
 
@@ -40,7 +42,9 @@ export default async function ProfilePage({
     await  increaseProfileVisits(profileId);
   }
 
-   if (isOwner && !session?.user?.isSubscribed && !session?.user?.isTrial) {
+   const { checkout_success } = await searchParams;
+
+   if (isOwner && !session?.user?.isSubscribed && !session?.user?.isTrial && !checkout_success) {
     redirect(`/${profileId}/upgrade`);
   }
 
@@ -63,14 +67,7 @@ console.log(session);
         )
       }
       
-      <div className="fixed top-0 left-0 w-full flex justify-center gap-1 py-2 bg-background-tertiary">
-        <span>Você está usando a versão trial. </span>
-        <Link href={`/${profileId}/upgrade`}>
-          <button className="text-accent-green font-bold">
-            Faça a upgrade agora!
-          </button>
-        </Link>
-      </div>
+
       <div className="w-1/2 flex justify-center h-min">
         <UserCard profileData={profileData} isOwner={isOwner}/>
       </div>

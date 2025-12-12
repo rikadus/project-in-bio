@@ -19,7 +19,7 @@ export async function POST(request: Request) {
   const customerId = user.data()?.customerId;
 
   if (!customerId) {
-    return NextResponse.json({ error: "Usuário não autenticado" }, { status: 401 })
+    return NextResponse.json({ error: "Usuário não possui uma assinatura " }, { status: 401 })
   }
 
   try {

@@ -1,6 +1,6 @@
 // app/components/landing-page/commons/user-card/user-card.tsx
 
-import { Github, Icon, Instagram, Linkedin, Plus, Twitter } from "lucide-react";
+import { Github, Instagram, Linkedin, Plus, Twitter } from "lucide-react";
 import Button from "../../ui/button";
 import EditSocialLinks from "../edit-socil-links";
 import Link from "next/link";
@@ -20,7 +20,7 @@ export default async function UserCard({
   isOwner?: boolean;
 }) {
 
-  const icons = [ Github, Instagram, Linkedin, Twitter, Plus ]
+
   
   
   return (
@@ -87,14 +87,7 @@ export default async function UserCard({
             )}    
           
           {
-            icons.map((Icon, index) => (
-              <button
-                key={index}
-                className="p-3 rounded-xl bg-[#1E1E1E] hover:bg-[#2E2E2E]"
-                >
-              <Icon/>
-              </button>
-            ))
+
           }     
          
          {isOwner && <EditSocialLinks socialMedias={profileData?.socialMedias} />}

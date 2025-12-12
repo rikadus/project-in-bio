@@ -41,7 +41,7 @@ export async function POST(req: Request) {
         }
       });
       customerId = newCustomer.id;
-      await userRef.update({customerId});
+      await userRef.set({ customerId }, { merge: true });
     }
 
     const session = await stripe.checkout.sessions.create({
@@ -52,7 +52,7 @@ export async function POST(req: Request) {
         }],
         mode: isSubscription ? "subscription" : "payment",
         payment_method_types: isSubscription ? ["card"] : ["card", "boleto"],       
-        success_url: `${req.headers.get("origin")}/${metadata.profileId}`,
+        success_url: `${req.headers.get("origin")}/${metadata.profileId}?checkout_success=true`,
         cancel_url: `${req.headers.get("origin")}/${metadata.profileId}/upgrade`,
         client_reference_id: userId,
         metadata,
