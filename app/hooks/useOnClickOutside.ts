@@ -1,3 +1,4 @@
+// app/hooks/useOnClickOutside.ts
 
 import { useEffect } from "react";
 

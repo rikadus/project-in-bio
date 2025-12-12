@@ -1,3 +1,5 @@
+// app/(pages)/[profileId]/upgrade/page.tsx
+
 import Header from "@/app/components/landing-page/header";
 import PlanButtons from "./plan-buttons";
 

@@ -1,3 +1,4 @@
+// app/components/landing-page/commons/edit-socil-links.tsx
 "use client";
 
 import { Github, Instagram, Linkedin, Plus, Twitter } from "lucide-react";

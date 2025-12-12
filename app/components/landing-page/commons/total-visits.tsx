@@ -1,9 +1,9 @@
+// app/components/landing-page/commons/total-visits.tsx
+
 import { TrendingUp } from "lucide-react";
 import { auth } from "@/app/lib/auth";
 import { manageAuth } from "@/app/actions/manager-auth";
 import PortalButton from "./portal-button";
-
-
 
 export async function TotalVisits({
   totalVisits = 0,

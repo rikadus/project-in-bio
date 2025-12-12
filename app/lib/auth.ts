@@ -1,7 +1,9 @@
+// app/lib/auth.ts
+
 import NextAuth from "next-auth";
 import { FirestoreAdapter } from "@auth/firebase-adapter";
 import GoogleProvider from "next-auth/providers/google";
-import { db } from "./firebase"; // Importamos o db que já está inicializado
+import { db } from "./firebase"; 
 import { Timestamp } from "firebase-admin/firestore";
 import { TRIAL_DAYS } from  "@/app/lib/config";
 import { DefaultSession } from "next-auth";

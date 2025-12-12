@@ -1,3 +1,5 @@
+// app/components/landing-page/pricing.tsx
+
 import { TRIAL_DAYS } from "@/app/lib/config";
 import Button from "./ui/button";
 
@@ -48,7 +50,7 @@ export default function Pricing() {
             <div className="w-full bg-background-secondary p-8 flex flex-col gap-7 rounded-b-2xl">
               <div className="flex flex-col">
                 <span className="text-white font-bold text-2xl">Vitalício</span>
-                <span className="text-content-body">Economize com</span>
+                <span className="text-content-body">Economize por</span>
               </div>
               <div className="flex items-center gap-1">
                 <span className="text-white font-bold text-[48px]">

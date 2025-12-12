@@ -1,3 +1,4 @@
+// app/actions/increase-profile-visits.ts
 "use server"
 
 import { db } from "@/app/lib/firebase";

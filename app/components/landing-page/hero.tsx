@@ -1,3 +1,5 @@
+// app/components/landing-page/hero.tsx
+
 import Button from "./ui/button";
 import TextInput from "./ui/text-input";
 import UserCard from "./commons/user-card/user-card";
@@ -10,7 +12,7 @@ export default function Hero() {
     <div className="flex h-screen">
       <div className="w-full flex flex-col gap-2 mt-[35vh]">
         <h1 className="text-5xl font-bold text-white leading-[64px]">
-          Seus Projetos e Redes Sociais em um único Link
+          Seus Projetos e Redes Sociais em um único Link.
         </h1>
         <h2 className="text-xl leading-6 text-white">
           Crie sua própria página de projetos e compartilhe eles com o mundo.

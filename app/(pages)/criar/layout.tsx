@@ -1,3 +1,5 @@
+// app/(pages)/criar/layout.tsx
+
 import { auth } from "@/app/lib/auth";
 import { redirect } from "next/navigation";
 import { getProfileId } from "@/app/server/get-profile-data";

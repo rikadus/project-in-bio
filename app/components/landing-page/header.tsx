@@ -1,3 +1,4 @@
+// app/components/landing-page/header.tsx
 
 import { auth } from "@/app/lib/auth";
 import Button from "./ui/button";
@@ -23,7 +24,7 @@ export default async function Header() {
 
       {session && 
       <Link href={`/${profileId}`}>
-      <Button>Minha Página</Button>
+        <Button>Minha Página</Button>
       </Link>}
 
         <form action={manageAuth}>

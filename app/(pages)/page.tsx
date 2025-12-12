@@ -1,3 +1,5 @@
+// app/(pages)/page.tsx
+
 import Image from "next/image";
 import FAQ from "../components/landing-page/faq";
 import Header from "../components/landing-page/header";

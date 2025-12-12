@@ -1,3 +1,5 @@
+// app/(pages)/layout.tsx
+
 import "./globals.css";
 /*Font imports Google*/
 import { Red_Hat_Display } from "next/font/google";

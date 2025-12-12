@@ -1,3 +1,5 @@
+// app/components/landing-page/ui/text-input.tsx
+
 import { cn } from "@/app/lib/utils";
 
 export default function TextInput(

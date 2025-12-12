@@ -1,3 +1,5 @@
+// app/components/landing-page/commons/user-card/user-card.tsx
+
 import { Github, Icon, Instagram, Linkedin, Plus, Twitter } from "lucide-react";
 import Button from "../../ui/button";
 import EditSocialLinks from "../edit-socil-links";
@@ -97,7 +99,8 @@ export default async function UserCard({
          
          {isOwner && <EditSocialLinks socialMedias={profileData?.socialMedias} />}
           {/*<EditSocialLinks />*/}
-        </div>      </div>
+        </div>      
+      </div>
       <div className="flex flex-col gap-3 w-full min-h-[172px]">
         <div className="w-full flex flex-col items-center gap-3">
           {profileData?.link1 && (
@@ -123,8 +126,7 @@ export default async function UserCard({
           )}
           {isOwner && <AddCustomLink/>}
         </div>
-      </div>
-      
+      </div>      
     </div>
   );
 }

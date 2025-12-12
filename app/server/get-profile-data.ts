@@ -1,3 +1,5 @@
+// server/get-profile-data.ts
+
 import "server-only";
 import { db } from "../lib/firebase";
 import { Link } from "../actions/add.custom-links";
@@ -73,7 +75,7 @@ export async function getProfileProjects(profileId: string) {
 }
 
 export async function getProfileId(userId?: string ) {
-  // 1. Proteção: Se não tiver ID, nem tenta buscar no banco
+  // Proteção: Se não tiver ID, nem tenta buscar no banco
   if (!userId) return null;
 
   try {
@@ -82,7 +84,7 @@ export async function getProfileId(userId?: string ) {
       .where("userId", "==", userId)
       .get();
 
-    // 2. Proteção: Verifica se encontrou algum documento antes de tentar acessar
+    // Proteção: Verifica se encontrou algum documento antes de tentar acessar
     if (snapshot.empty) {
       return null;
     }

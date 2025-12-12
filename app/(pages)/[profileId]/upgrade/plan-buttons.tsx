@@ -1,3 +1,4 @@
+// app/(pages)/[profileId]/upgrade/plan-buttons.tsx
 "use client";
 
 import Button from "@/app/components/landing-page/ui/button";

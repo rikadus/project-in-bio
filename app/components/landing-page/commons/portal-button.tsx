@@ -1,3 +1,4 @@
+// app/components/landing-page/commons/portal-button.tsx
 "use client"
 
 import { useStripe } from "@/app/hooks/useStripe"

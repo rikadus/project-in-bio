@@ -1,3 +1,5 @@
+// app/components/landing-page/ui/button.tsx
+
 import { cn } from "@/app/lib/utils";
 
 export default function Button({

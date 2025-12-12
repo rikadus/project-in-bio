@@ -1,3 +1,4 @@
+// app/components/landing-page/commons/project-card.tsx
 "use client"
 
 import { ProjectData } from "@/app/server/get-profile-data";
@@ -25,7 +26,7 @@ export default function ProjectCard({
   const rawUrl = project?.projectUrl;
   const projectUrl = (rawUrl && rawUrl.trim() !== "") ? formatUrl(rawUrl) : "#";
 
-  // 2. DADOS PADRÃO 
+  // Dados do projeto
   const projectName = project?.projectName || "Projeto Exemplo";
   const projectDescription = project?.projectDescription || "Descrição do projeto...";
   const projectVisits = project?.totalVisits || 0;

@@ -1,3 +1,5 @@
+// app/api/stripe/create-portal/router.ts
+
 import stripe from "@/app/lib/stripe";
 import { NextResponse } from "next/server";
 import { auth } from "@/app/lib/auth";

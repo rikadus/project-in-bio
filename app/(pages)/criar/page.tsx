@@ -1,3 +1,5 @@
+// app/(pages)/criar/page.tsx
+
 import Header from "@/app/components/landing-page/header";
 
 import { Rocket } from "lucide-react";

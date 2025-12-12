@@ -1,3 +1,5 @@
+// app/components/landing-page/video-explanation.tsx
+
 import { Play } from "lucide-react";
 
 export default function VideoExplanation() {

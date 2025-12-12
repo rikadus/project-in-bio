@@ -1,3 +1,5 @@
+// app/components/landing-page/faq.tsx
+
 import { title } from "process";
 
 export default function FAQ() {

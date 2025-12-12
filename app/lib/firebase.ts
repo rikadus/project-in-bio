@@ -1,18 +1,23 @@
+// app/lib/firebase.ts
+
 import { cert, getApps, initializeApp } from "firebase-admin/app";
 import { getFirestore } from "firebase-admin/firestore";
 import { getStorage } from "firebase-admin/storage";
 import "server-only";
 
-// 1. Tenta pegar a variável BASE64
+// Tenta pegar a variável BASE64
 const encodedKey = process.env.FIREBASE_PRIVATE_KEY_BASE64;
 let privateKey;
 
 if (encodedKey) {
-  // 2. Se existir Base64, decodifica
+
+  // Se existir Base64, decodifica
   const decoded = Buffer.from(encodedKey, "base64").toString("utf-8");
-  // 3. E AINDA ASSIM faz o replace, garantindo que as quebras de linha funcionem
+
+  // Faz o replace, garantindo que as quebras de linha funcionem
   privateKey = decoded.replace(/\\n/g, '\n'); 
 } else {
+
   // Fallback para caso você use a chave normal (sem ser base64)
   privateKey = process.env.FIREBASE_PRIVATE_KEY?.replace(/\\n/g, '\n');
 }

@@ -1,5 +1,7 @@
 "use client";
 
+// app/components/landing-page/ui/modal.tsx
+
 import useOnClickOutside from "@/app/hooks/useOnClickOutside";
 import {useRef } from "react";
 

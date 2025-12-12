@@ -1,3 +1,5 @@
+// app/hooks/useStripe.ts
+
 import { useEffect, useState } from "react";
 import {loadStripe, Stripe} from "@stripe/stripe-js";
 

@@ -1,3 +1,4 @@
+// app/(pages)/[profileId]/new-project.tsx
 "use client"
 
 

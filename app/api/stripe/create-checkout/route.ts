@@ -1,3 +1,5 @@
+// app/api/stripe/create-checkout/route.ts
+
 import { auth } from "@/app/lib/auth";
 import { db } from "@/app/lib/firebase";
 import stripe from "@/app/lib/stripe";

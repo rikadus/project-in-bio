@@ -1,3 +1,5 @@
+// app/(pages)/[profileId]/page.tsx
+
 import ProjectCard from "@/app/components/landing-page/commons/project-card";
 import { TotalVisits } from "@/app/components/landing-page/commons/total-visits";
 import UserCard from "@/app/components/landing-page/commons/user-card/user-card";
