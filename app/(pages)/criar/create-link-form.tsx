@@ -11,8 +11,6 @@ import { verifyLink } from "@/app/actions/verify-link";
 import { createLink } from "@/app/actions/create-link";
 import { useRouter, useSearchParams } from "next/navigation";
 
-
-
 export default function CreateLinkForm() {
   const router = useRouter();
 
@@ -22,7 +20,7 @@ export default function CreateLinkForm() {
   const [error, setError] = useState("");
 
   function handleLinkChange(e: ChangeEvent<HTMLInputElement>) {
-   
+  
     setLink(sanitizeLink(e.target.value));
     setError("");
   }

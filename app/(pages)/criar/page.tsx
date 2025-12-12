@@ -14,7 +14,7 @@ export default function CriarPage() {
           <h1 className="text-4xl font-bold text-white">Escolha seu link</h1>
           <Rocket className="size-10" />
         </div>
-        <CreateLinkForm />
+        <CreateLinkForm /> 
       </div>
     </div>
   );
