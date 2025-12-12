@@ -6,6 +6,12 @@ import { db, storage } from "../lib/firebase";
 import { randomUUID } from "crypto";
 import { auth } from "../lib/auth";
 
+/**
+ * Salva ou atualiza as informações do perfil do usuário.
+ * Inclui lógica para upload de nova foto e substituição da antiga.
+ * @param formData - Dados do formulário (nome, descrição, imagem, etc).
+ * @returns true se sucesso, false caso contrário.
+ */
 export async function saveProfile(formData: FormData) {
   const session = await auth();
 

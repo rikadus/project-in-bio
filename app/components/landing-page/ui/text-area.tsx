@@ -2,6 +2,10 @@
 
 import { cn } from "@/app/lib/utils";
 
+/**
+ * TextArea estilizado reutilizável.
+ * Herda todas as propriedades padrão de HTMLTextAreaElement.
+ */
 export default function TextArea(
   props: React.TextareaHTMLAttributes<HTMLTextAreaElement>
 ) {

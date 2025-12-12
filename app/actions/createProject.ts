@@ -6,6 +6,11 @@ import { db, storage } from "@/app/lib/firebase"; // Certifique-se que exporta '
 import { auth } from "@/app/lib/auth"; // Import correto do Auth.js
 import { randomUUID } from "crypto";
 
+/**
+ * Cria um novo projeto associado a um perfil, com upload de imagem.
+ * @param formData - Dados do formulário incluindo imagem e textos.
+ * @returns true se sucesso, false caso contrário.
+ */
 export async function createProject(formData: FormData) {
   const session = await auth();
   

@@ -3,6 +3,10 @@
 import { TRIAL_DAYS } from "@/app/lib/config";
 import Button from "./ui/button";
 
+/**
+ * Seção de Preços.
+ * Exibe planos de assinatura (Mensal e Vitalício).
+ */
 export default function Pricing() {
   return (
     <div className="my-[150px] flex flex-col items-center gap-14">

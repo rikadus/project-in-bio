@@ -2,6 +2,10 @@
 
 import { Play } from "lucide-react";
 
+/**
+ * Seção reservada para vídeo explicativo.
+ * Atualmente exibe um placeholder com ícone de play.
+ */
 export default function VideoExplanation() {
   return (
     <div

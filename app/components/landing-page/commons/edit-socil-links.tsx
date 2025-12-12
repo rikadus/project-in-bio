@@ -9,6 +9,11 @@ import { useParams, useRouter } from "next/navigation";
 import { createSocialLinks } from "@/app/actions/create-social-links";
 import TextInput from "../ui/text-input";
 
+/**
+ * Componente (Client Side) para reordenar e editar links de redes sociais.
+ * Abre um modal com campos de texto para Github, Linkedin, Instagram e Twitter.
+ * @param socialMedias - Objeto com os links atuais, se houver.
+ */
 export default function EditSocialLinks({
   socialMedias,
 }: {

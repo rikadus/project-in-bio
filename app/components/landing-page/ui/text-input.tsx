@@ -2,6 +2,10 @@
 
 import { cn } from "@/app/lib/utils";
 
+/**
+ * Input de texto estilizado reutilizável.
+ * Herda todas as propriedades padrão de HTMLInputElement.
+ */
 export default function TextInput(
   props: React.InputHTMLAttributes<HTMLInputElement>
 ) {

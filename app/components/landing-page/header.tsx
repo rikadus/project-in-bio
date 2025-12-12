@@ -7,6 +7,10 @@ import Link from "next/link";
 import { getProfileId } from "@/app/server/get-profile-data";
 
 
+/**
+ * Cabeçalho principal da Landing Page.
+ * Exibe o logo e gerencia botões de ação baseados na sessão do usuário (Login/Logout/Minha Página).
+ */
 export default async function Header() {
 
   const session = await auth();

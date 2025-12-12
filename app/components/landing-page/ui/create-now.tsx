@@ -7,6 +7,10 @@ import Button from "../ui/button";
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 
+/**
+ * Componente de entrada para criação rápida de link no Hero.
+ * Permite ao usuário digitar um link desejado e iniciar o sign-in.
+ */
 export default function CreateNow() {
 
     const [link, setLink] = useState("");

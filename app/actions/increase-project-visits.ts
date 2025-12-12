@@ -4,6 +4,12 @@
 import { db } from "@/app/lib/firebase";
 import { FieldValue } from "firebase-admin/firestore";
 
+/**
+ * Incrementa o visualizações de um projeto específico.
+ * Usa transação para garantir atomicidade.
+ * @param profileId - ID do perfil dono do projeto.
+ * @param projectId - ID do projeto a ser incrementado.
+ */
 export async function increaseProjectVisits(profileId: string, projectId: string){
   const projectRef = db
   .collection("profiles")

@@ -2,6 +2,10 @@
 
 import { title } from "process";
 
+/**
+ * Seção de Perguntas Frequentes (FAQ).
+ * Renderiza uma lista de perguntas e respostas dividida em duas colunas.
+ */
 export default function FAQ() {
   const faqItems = [
     {

@@ -5,6 +5,11 @@ import { Timestamp } from "firebase-admin/firestore";
 import { db } from "../lib/firebase";
 import { auth } from "@/app/lib/auth";
 
+/**
+ * Cria ou atualiza links de redes sociais para um perfil.
+ * @param params - Objeto contendo profileId e URLs das redes sociais.
+ * @returns true se sucesso, false caso contrário ou se usuário não autenticado.
+ */
 export async function createSocialLinks ({
   profileId,
   github,

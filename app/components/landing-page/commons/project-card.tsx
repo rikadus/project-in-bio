@@ -7,6 +7,12 @@ import { formatUrl } from "@/app/lib/utils";
 import { useParams } from "next/navigation";
 import { increaseProjectVisits } from "@/app/actions/increase-project-visits";
 
+/**
+ * Exibe um card individual de projeto com imagem, título e descrição.
+ * Incrementa contador de visitas ao clicar (se não for o dono).
+ * @param project - Objeto ProjectData com detalhes do projeto.
+ * @param isOwner - Se true, não contabiliza clique e permite edição (futura/visual).
+ */
 export default function ProjectCard({
   project,
   isOwner,

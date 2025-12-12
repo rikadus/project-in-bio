@@ -2,6 +2,12 @@
 
 import { cn } from "@/app/lib/utils";
 
+/**
+ * Componente de botão reutilizável.
+ * Suporta variantes de estilo (primary, secondary, ghost) e props de botão HTML padrão.
+ * @param children - Conteúdo do botão.
+ * @param variant - Estilo visual do botão (default: 'primary').
+ */
 export default function Button({
   children,
   variant = "primary",

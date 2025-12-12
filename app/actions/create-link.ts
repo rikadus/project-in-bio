@@ -5,6 +5,11 @@ import { Timestamp } from "firebase-admin/firestore";
 import { db } from "../lib/firebase";
 import { auth } from "../lib/auth";
 
+/**
+ * Cria um novo link/perfil para o usuário atual.
+ * @param link - Slug/caminho personalizado para o link (usado como ID do documento).
+ * @returns true se criado com sucesso, false caso contrário.
+ */
 export async function createLink(link: string) {
  //return false;
 

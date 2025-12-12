@@ -5,6 +5,12 @@ import { auth } from "@/app/lib/auth";
 import { manageAuth } from "@/app/actions/manager-auth";
 import PortalButton from "./portal-button";
 
+/**
+ * Exibe o total de visitas acumuladas no perfil ou projetos.
+ * Opcionalmente exibe a barra de ações com botão de Portal e Logout.
+ * @param totalVisits - Número de visitas para exibir.
+ * @param showBar - Se true, renderiza botões extras (PortalButton, Sair).
+ */
 export async function TotalVisits({
   totalVisits = 0,
   showBar = false

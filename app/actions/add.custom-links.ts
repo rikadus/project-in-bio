@@ -8,6 +8,13 @@ export type Link = {
     url: string;
 }
 
+/**
+ * Atualiza os links personalizados de um perfil.
+ * @param link1 - Primeiro link personalizado.
+ * @param link2 - Segundo link personalizado.
+ * @param link3 - Terceiro link personalizado.
+ * @param profileId - ID do documento do perfil.
+ */
 export default async function addCustomLinks({
   link1,
   link2,

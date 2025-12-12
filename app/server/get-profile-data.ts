@@ -36,6 +36,11 @@ export type ProjectData = {
   totalVisits?: number;
 };
 
+/**
+ * Busca os dados públicos do perfil de um usuário pelo ID do documento (profileId).
+ * @param profileId - ID do documento na coleção 'profiles'.
+ * @returns Dados do perfil ou null se não existir.
+ */
 export async function getProfileData(profileId: string) {
   const snapshot = await db.collection("profiles").doc(profileId).get();
   
@@ -44,6 +49,11 @@ export async function getProfileData(profileId: string) {
   return snapshot.data() as ProfileData;
 }
 
+/**
+ * Busca todos os projetos associados a um perfil.
+ * @param profileId - ID do documento do perfil.
+ * @returns Lista de projetos (ProjectData[]).
+ */
 export async function getProfileProjects(profileId: string) {
   const snapshot = await db
     .collection("profiles")
@@ -74,6 +84,11 @@ export async function getProfileProjects(profileId: string) {
   return projects;
 }
 
+/**
+ * Busca o profileId (ID do documento) baseado no userId (ID da autenticação).
+ * @param userId - ID do usuário autenticado.
+ * @returns profileId (string) ou null se não encontrado.
+ */
 export async function getProfileId(userId?: string ) {
   // Proteção: Se não tiver ID, nem tenta buscar no banco
   if (!userId) return null;

@@ -5,6 +5,13 @@
 import useOnClickOutside from "@/app/hooks/useOnClickOutside";
 import {useRef } from "react";
 
+/**
+ * Modal genérico com fundo borrado (backdrop blur).
+ * Fecha ao clicar fora do conteúdo.
+ * @param children - Conteúdo do modal.
+ * @param isOpen - Estado de visibilidade.
+ * @param setIsOpen - Função para alterar a visibilidade.
+ */
 export default function Modal({
    children,
    isOpen,

@@ -7,6 +7,10 @@ import { TotalVisits } from "./commons/total-visits";
 import ProjectCard from "./commons/project-card";
 import CreateNow from "./ui/create-now";
 
+/**
+ * Seção Hero (Destaque inicial).
+ * Apresenta a proposta de valor e demonstração visual do produto (UserCard, ProjectCard, etc).
+ */
 export default function Hero() {
   return (
     <div className="flex h-screen">
