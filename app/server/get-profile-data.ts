@@ -50,7 +50,7 @@ export async function getProfileProjects(profileId: string) {
     .get();
 
   if (snapshot.empty) {
-    console.log("❌ NENHUM PROJETO ENCONTRADO PARA:", profileId);
+   
     return [];
   }
 
@@ -68,7 +68,6 @@ export async function getProfileProjects(profileId: string) {
     } as ProjectData;
   });
 
-  console.log("✅ PROJETOS CARREGADOS:", projects);
 
   return projects;
 }

@@ -58,8 +58,7 @@ export default function EditUserCard({
     })
 
   }
-
-  console.log(profilePic);
+ console.log(profilePic);
     return (
       <>
         <button onClick={() => setIsModalOpen(true)}>

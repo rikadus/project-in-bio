@@ -12,7 +12,7 @@ export default async function Header() {
 
   const profileId = await getProfileId(session?.user?.id as string) 
 
-  console.log(session);
+
   return (
     <div className="absolute top-0 left-0 right-0 max-w-7xl mx-auto flex items-center justify-between py-4">
       <div className="flex items-center gap-4">

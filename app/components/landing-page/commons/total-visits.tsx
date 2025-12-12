@@ -1,6 +1,20 @@
 import { TrendingUp } from "lucide-react";
+import { auth } from "@/app/lib/auth";
+import { manageAuth } from "@/app/actions/manager-auth";
+import PortalButton from "./portal-button";
 
-export function TotalVisits({totalVisits = 0 }: {totalVisits?: number}) {
+
+
+export async function TotalVisits({
+  totalVisits = 0,
+  showBar = false
+}: {
+  totalVisits?: number;
+  showBar?: boolean;
+}) {
+  
+  const session = await auth();
+  
   return (
     <div
       className="w-min whitespace-nowrap flex items-center gap-5
@@ -11,10 +25,15 @@ export function TotalVisits({totalVisits = 0 }: {totalVisits?: number}) {
         <span className="text-3xl font-bold">{totalVisits}</span>
         <TrendingUp />
       </div>
-      {/*<div className="flex items-center gap-2">
-        <button>Portal</button>
-        <button>Sair</button>
-      </div>*/}
+
+      {showBar && (
+        <div className="flex items-center gap-2">
+      {session?.user.isSubscribed && <PortalButton />}   
+      <form action={manageAuth}> 
+      <button className="text-white hover:underline hover:text-accent-green transition-colors" >Sair</button> 
+      </form>     
+      </div>
+      )}
     </div>
   );
 }

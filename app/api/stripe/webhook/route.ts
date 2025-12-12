@@ -42,13 +42,13 @@ export async function POST(req: NextRequest) {
 
           if (hostedVoucheUrl){ 
             const userEmail = event.data.object.customer_details?.email;
-            console.log("Enviar email para o cliente com o boleto")
+           console.log("Enviar email para o cliente com o boleto")
           }
         }
-        console.log("Usuário completou o pagamento")       
+           console.log("Usuário completou o pagamento")    
             break;
         case "checkout.session.async_payment_succeeded":
-          console.log("usuário pagou com boleto")
+        console.log("usuário pagou com boleto")
         // Pagamento boleto foi concluído
          if (event.data.object.payment_status === "paid"){
           const useId = event.data.object.client_reference_id;

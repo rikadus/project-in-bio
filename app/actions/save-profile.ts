@@ -57,7 +57,7 @@ export async function saveProfile(formData: FormData) {
     return true;
   }
   catch (error) {
-    console.log(error);
+   
     return false;
   }
 }
