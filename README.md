@@ -103,3 +103,11 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 <p align="center">
   Built Ricardo Rodrigo
 </p>
+
+<p align="center">
+  <a href="https://github.com/ricardorodrigoteste/projectinbio">Project In Bio</a>
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/ricardo-rodrigoo/">LinkedIn</a>
+</p>
